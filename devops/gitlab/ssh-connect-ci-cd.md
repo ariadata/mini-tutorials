@@ -52,6 +52,6 @@ deploy-to-server:
   only:
     - develop
   script:
-    - ssh -o StrictHostKeyChecking=no $STAGE_SSH_USER@$STAGE_SSH_ADDRESS -p $STAGE_SSH_PORT "whoami"
+    - ssh -o StrictHostKeyChecking=no $STAGE_SSH_USER@$STAGE_SSH_ADDRESS -p $STAGE_SSH_PORT "git clone your_private_repo.git"
 
 ```
