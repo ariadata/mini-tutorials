@@ -19,6 +19,9 @@ cat ~/.ssh/id_rsa
 
 ```
 3- In **Remote Server** config access to GitLab
+
+> enable `publicKeyAuthentication` in `/etc/ssh/sshd_config` and restart sshd service
+
 ```bash
 echo "[credential]
 	helper = store
