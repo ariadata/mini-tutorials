@@ -21,6 +21,10 @@ cat ~/.ssh/id_rsa
 3- In **Remote Server** config access to GitLab
 
 > enable `publicKeyAuthentication` in `/etc/ssh/sshd_config` and restart sshd service
+```bash
+sudo sed -i 's/#PubkeyAuthentication yes/PubkeyAuthentication yes/g' /etc/ssh/sshd_config
+sudo systemctl restart sshd
+```
 
 ```bash
 echo "[credential]
