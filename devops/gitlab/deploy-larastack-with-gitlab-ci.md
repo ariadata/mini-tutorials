@@ -192,7 +192,10 @@ bash update-project.sh main
 
 ### 18- In `GitLab` , goto `CI/CD` -> `Pipelines` and click `Run Pipeline` to test the pipeline
 
-
+## todo:
+- make branches protected
+- make ci of stage first then ci of product
+- make
 
 
 
