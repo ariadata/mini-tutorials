@@ -37,7 +37,7 @@ su - production
 
 ### 07- Run the following commands to create `ssh` keys, and copy the output of `cat ~/.ssh/id_rsa` to use in `GitLab` later:
 ```bash
-ssh-keygen -t rsa -b 4096 -C "ssh-connect-ci-cd"
+ssh-keygen -t rsa -b 2048 -C "ssh-connect-ci-cd"
 cat ~/.ssh/id_rsa.pub >> ~/.ssh/authorized_keys
 chmod 600 ~/.ssh/authorized_keys
 cat ~/.ssh/id_rsa
