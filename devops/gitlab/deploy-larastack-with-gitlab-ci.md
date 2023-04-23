@@ -1,4 +1,4 @@
-# Steps to Create Laravel Stack + CI/CD
+# Steps to Create Laravel Stack + CI/CD (single branch = main )
 
 ### 01- Create new repository in **GitLab**
 ### 02- Create a new `Access Token` for the repository:
