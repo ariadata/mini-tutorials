@@ -41,7 +41,7 @@ sudo systemctl disable --now systemd-resolved.service
 
 sudo rm -rf /etc/resolv.conf && echo -e "nameserver 1.1.1.1\nnameserver 8.8.4.4\n" | sudo tee /etc/resolv.conf
 
-bash <(curl -sSL https://github.com/ariadata/mini-tutorials/raw/main/devops/kubernetes/1.29/k8s-ubuntu-22.sh)
+sudo bash <(curl -sSL https://github.com/ariadata/mini-tutorials/raw/main/devops/kubernetes/1.29/k8s-ubuntu-22.sh)
 
 reboot
 ```
