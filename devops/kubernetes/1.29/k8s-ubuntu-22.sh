@@ -7,7 +7,7 @@ export DEBIAN_FRONTEND=noninteractive
 sudo apt update && sudo apt upgrade -y && sudo apt autoremove -y
 sudo apt -y install wget curl nano lsb-release gnupg2 apt-transport-https ca-certificates software-properties-common
 
-sudo swapoff -a && sed -i '/ swap / s/^\(.*\)$/#\1/g' /etc/fstab
+sudo swapoff -a && sudo sed -i '/ swap / s/^\(.*\)$/#\1/g' /etc/fstab
 
 echo -e "overlay\nbr_netfilter\n" | sudo tee -a /etc/modules-load.d/containerd.conf
 echo -e "net.bridge.bridge-nf-call-iptables = 1\nnet.ipv4.ip_forward = 1\nnet.bridge.bridge-nf-call-ip6tables = 1\n" | sudo tee -a /etc/sysctl.d/99-kubernetes-cri.conf
