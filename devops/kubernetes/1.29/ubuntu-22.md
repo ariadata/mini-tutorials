@@ -13,7 +13,7 @@
 #### 192.168.3.10 KControl1
 #### 192.168.3.11 KControl2
 #### 192.168.3.12 KWorker1
-#### 192.168.3.13 KWorker3
+#### 192.168.3.13 KWorker2
 
 ```bash
 #Control Node1:
