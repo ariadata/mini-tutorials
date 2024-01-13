@@ -10,27 +10,31 @@
 
 ## In this example we have 4 nodes:
 
-#### 192.168.3.10 KControl1
-#### 192.168.3.11 KControl2
-#### 192.168.3.12 KWorker1
-#### 192.168.3.13 KWorker2
+> 192.168.3.10 KControl1
 
+> 192.168.3.11 KControl2
+
+> 192.168.3.12 KWorker1
+
+> 192.168.3.13 KWorker2
+
+## Set Hostnames (as root) in `All Nodes` :
 ```bash
 #Control Node1:
 hostnamectl --static set-hostname KControl1
 #Control Node1:
 hostnamectl --static set-hostname KControl2
-
 #Worker Node 1:
 hostnamectl --static set-hostname KWorker1
 #Worker Node 2:
 hostnamectl --static set-hostname KWorker2
+
+# all nodes
+sed -i 's/preserve_hostname: false/preserve_hostname: true/g' /etc/cloud/cloud.cfg
 ```
 
-## Run installation Script (as root) in `All Nodes` :
+## Run Init & installation Script (as root) in `All Nodes` :
 ```bash
-sed -i 's/preserve_hostname: false/preserve_hostname: true/g' /etc/cloud/cloud.cfg
-
 systemctl disable --now systemd-resolved.service
 
 rm -rf /etc/resolv.conf && echo -e "nameserver 1.1.1.1\nnameserver 8.8.4.4\n" | tee /etc/resolv.conf
