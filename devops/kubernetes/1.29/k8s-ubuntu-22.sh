@@ -2,11 +2,6 @@
 set -e
 cd "$(dirname "$0")" # cd "$(dirname "$0")" || exit
 
-if (( $EUID != 0 )); then
-    echo "Please run as root"
-    exit
-fi
-
 export DEBIAN_FRONTEND=noninteractive
 
 sudo apt update && sudo apt upgrade -y && sudo apt autoremove -y
