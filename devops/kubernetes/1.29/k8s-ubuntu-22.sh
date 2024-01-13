@@ -29,7 +29,7 @@ sudo sed -i 's/pause:3.6/pause:3.9/g' /etc/containerd/config.toml
 sudo systemctl enable --now containerd && sudo systemctl restart containerd
 
 # apt update && apt install -y kubelet kubeadm kubectl && apt-mark hold kubelet kubeadm kubectl
-sudo apt update && sudo apt install -y kubelet=1.29.0-1.1 kubeadm=1.29.0-1.1 kubectl=1.29.0-1.1 && apt-mark hold kubelet kubeadm kubectl
+sudo apt update && sudo apt install -y kubelet=1.29.0-1.1 kubeadm=1.29.0-1.1 kubectl=1.29.0-1.1 && sudo apt-mark hold kubelet kubeadm kubectl
 
 read -e -p $'Do you want to \e[31mreboot now\033[0m ? : ' -i "y" if_reboot_at_end
 if [[ $if_reboot_at_end =~ ^([Yy])$ ]]
