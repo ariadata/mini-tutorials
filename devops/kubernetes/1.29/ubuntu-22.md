@@ -49,19 +49,18 @@ reboot
 ## Install Control-Plane (as sudo user) in `Control Node` :
 ```bash
 # change the IP address to your control plane IP address
-kubeadm init --control-plane-endpoint "192.168.3.10:6443" --upload-certs --kubernetes-version 1.29.0 --pod-network-cidr=10.10.0.0/16
+sudo kubeadm init --control-plane-endpoint "192.168.3.10:6443" --upload-certs --kubernetes-version 1.29.0 --pod-network-cidr=10.10.0.0/16
+### Note ###
+# Save the results (do NOT run in other nodes)
+#########
 
-# Save the results (do not run in other nodes)
-export KUBECONFIG=/etc/kubernetes/admin.conf
-
-kubectl apply -f https://raw.githubusercontent.com/projectcalico/calico/v3.27.0/manifests/calico.yaml
-
-# switch to normal user
-sudo -i -u ubuntu
 mkdir -p $HOME/.kube
 sudo cp -i /etc/kubernetes/admin.conf $HOME/.kube/config
 sudo chown $(id -u):$(id -g) $HOME/.kube/config
 bash -l
+
+kubectl apply -f https://raw.githubusercontent.com/projectcalico/calico/v3.27.0/manifests/calico.yaml
+
 ```
 ## Connect Control-Plane Nodes (as sudo user) in `Master Nodes` :
 ```bash
@@ -80,7 +79,7 @@ bash -l
 #Run the command from the token create output above
 ```
 
-## Check Cluster Status (as root) in `Control Node` :
+## Check Cluster Status (as sudo user) in `Control Node` :
 ```bash
 kubectl get nodes -o wide
 ```
