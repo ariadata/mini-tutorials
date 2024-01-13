@@ -29,6 +29,8 @@ hostnamectl --static set-hostname KWorker2
 
 ## Run installation Script (as root) in `All Nodes` :
 ```bash
+sed -i 's/preserve_hostname: false/preserve_hostname: true/g' /etc/cloud/cloud.cfg
+
 systemctl disable --now systemd-resolved.service
 
 rm -rf /etc/resolv.conf && echo -e "nameserver 1.1.1.1\nnameserver 8.8.4.4\n" | tee /etc/resolv.conf
@@ -86,6 +88,8 @@ bash -l
 
 
 # Used Links:
+- https://hbayraktar.medium.com/how-to-install-kubernetes-cluster-on-ubuntu-22-04-step-by-step-guide-7dbf7e8f5f99
+- https://kubernetes.io/docs/setup/production-environment/tools/kubeadm/install-kubeadm/
 - https://youtu.be/7k9Rdlx30OY
 - https://www.itsgeekhead.com/tuts/kubernetes-126-ubuntu-2204.txt
 - https://www.youtube.com/watch?v=Ro2qeYeisZQ
